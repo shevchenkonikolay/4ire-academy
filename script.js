@@ -100,9 +100,17 @@ while (menu) {
       break;
   }
   alert((sum / rate1) * rate2);
-  let userAns = getUserAnswer("Хотите продолжить?");
-  if (userAns == "нет") {
-    break;
+  let userAns;
+  while (true) {
+    userAns = getUserAnswer("Хотите продолжить? (Да или Нет)");
+    if (userAns === "НЕТ") {
+      menu = false;
+      break;
+    } else if (userAns === "ДА") {
+      break;
+    } else {
+      alert("Введите Да! или Нет!");
+    }
   }
 }
 
