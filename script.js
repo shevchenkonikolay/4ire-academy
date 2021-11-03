@@ -4,11 +4,11 @@ const PLN = "PLN";
 const TRY = "TRY";
 const USD = "USD";
 
-const EUR_RATE = 0.033;
+const EUR_RATE = 0.03;
 const UAH_RATE = 1;
 const PLN_RATE = 0.15;
 const TRY_RATE = 0.37;
-const USD_RATE = 0.038;
+const USD_RATE = 0.04;
 
 let menu = true;
 
@@ -26,7 +26,7 @@ while (menu) {
       curr1 !== PLN &&
       curr1 !== EUR
     ) {
-      alert("ШОШ Ты ДЕЛАЕШЬ? !!(Доступные валюты: USD, UAH, TRY, EUR, PLN)!!");
+      alert("ШО ты напысав? !!!ДОСТУПНЫЕ ВАЛЮТЫ: USD, UAH, TRY, EUR, PLN!!!");
     } else {
       break;
     }
@@ -43,7 +43,7 @@ while (menu) {
       curr2 !== PLN &&
       curr2 !== EUR
     ) {
-      alert("ШОШ Ты ДЕЛАЕШЬ? !!(Доступные валюты: USD, UAH, TRY, EUR, PLN)!!");
+      alert("ШО ты напысав? !!!ДОСТУПНЫЕ ВАЛЮТЫ: USD, UAH, TRY, EUR, PLN!!!");
     } else {
       break;
     }
@@ -54,7 +54,7 @@ while (menu) {
     if (sum && sum > 0) {
       break;
     }
-    alert("Больше нуля!!!!!!!!!");
+    alert("!!Цыфровое значение, БОЛЬШЕ НУЛЯ!!");
   }
   //Проверка закончилась
 
@@ -80,6 +80,7 @@ while (menu) {
       break;
   }
   let rate2;
+
   switch (curr2) {
     case UAH:
       rate2 = UAH_RATE;
@@ -99,8 +100,9 @@ while (menu) {
     default:
       break;
   }
-  alert((sum / rate1) * rate2);
+  alert(((sum / rate1) * rate2).toFixed(2));
   let userAns;
+  //Проверка началась
   while (true) {
     userAns = getUserAnswer("Хотите продолжить? (Да или Нет)");
     if (userAns === "НЕТ") {
@@ -109,9 +111,10 @@ while (menu) {
     } else if (userAns === "ДА") {
       break;
     } else {
-      alert("Введите Да! или Нет!");
+      alert("Введите (Да) или (Нет)");
     }
   }
+  //Проверка закончилась
 }
 
 function getUserAnswer(q, def) {
